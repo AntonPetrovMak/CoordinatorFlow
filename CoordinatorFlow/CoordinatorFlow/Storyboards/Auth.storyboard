@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up First View Controller-->
+        <scene sceneID="QQ5-WZ-hL7">
+            <objects>
+                <viewController storyboardIdentifier="SignUpFirstViewController" id="Q1G-yF-lFj" customClass="SignUpFirstViewController" customModule="CoordinatorFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s5x-Rj-9gL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-wl-Og6">
+                                <rect key="frame" x="37.5" y="278.5" width="300" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qse-0q-N39">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR1-Bb-EXw">
+                                        <rect key="frame" x="0.0" y="80" width="300" height="30"/>
+                                        <state key="normal" title="next"/>
+                                        <connections>
+                                            <action selector="actionTouchInNextButton:" destination="Q1G-yF-lFj" eventType="touchUpInside" id="xNn-tr-bHY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ZL7-ac-tOw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FU0-wl-Og6" firstAttribute="centerY" secondItem="s5x-Rj-9gL" secondAttribute="centerY" id="HLY-t1-czy"/>
+                            <constraint firstItem="FU0-wl-Og6" firstAttribute="centerX" secondItem="s5x-Rj-9gL" secondAttribute="centerX" id="Ts5-yu-Rh4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ozJ-Vn-8pu"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="qse-0q-N39" id="fnC-kv-RvV"/>
+                        <outlet property="nextButton" destination="aR1-Bb-EXw" id="PJ6-md-2xX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdi-rl-yHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--Sign Up Second View Controller-->
+        <scene sceneID="AL7-m0-p4a">
+            <objects>
+                <viewController storyboardIdentifier="SignUpSecondViewController" id="fto-fS-WS0" customClass="SignUpSecondViewController" customModule="CoordinatorFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09n-V8-Dsp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wbc-ui-XSA">
+                                <rect key="frame" x="37.5" y="278.5" width="300" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="01H-k7-jwp">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mja-IP-L80">
+                                        <rect key="frame" x="0.0" y="80" width="300" height="30"/>
+                                        <state key="normal" title="done"/>
+                                        <connections>
+                                            <action selector="actionTouchInDoneButton:" destination="fto-fS-WS0" eventType="touchUpInside" id="PlD-vI-4AJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="aYX-Nh-bC3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wbc-ui-XSA" firstAttribute="centerX" secondItem="09n-V8-Dsp" secondAttribute="centerX" id="Fe1-oe-9wE"/>
+                            <constraint firstItem="wbc-ui-XSA" firstAttribute="centerY" secondItem="09n-V8-Dsp" secondAttribute="centerY" id="qwa-Cg-FVI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Kj-Ea-A7n"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="mja-IP-L80" id="MkT-8E-xf0"/>
+                        <outlet property="passwordField" destination="01H-k7-jwp" id="Ddt-il-kHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZR-yZ-Kl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="27"/>
+        </scene>
+    </scenes>
+</document>
