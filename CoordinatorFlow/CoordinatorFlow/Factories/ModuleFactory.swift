@@ -24,37 +24,33 @@ protocol SignUpModulesFactory {
 }
 
 struct ModuleFactory: NumberModulesFactory, ApplicationModulesFactory, SignUpModulesFactory {
-    
     // MARK: - SignUpModulesFactory
-    
+
     func signUpFirstViewController() -> SignUpFirstViewController {
         return SignUpFirstViewController.controllerFromStoryboard(.auth)
     }
-    
+
     func signUpSecondViewController() -> SignUpSecondViewController {
         return SignUpSecondViewController.controllerFromStoryboard(.auth)
     }
-    
+
     // MARK: - ApplicationModulesFactory
-    
+
     func splashViewController() -> SplashViewController {
         return SplashViewController.controllerFromStoryboard(.main)
     }
-    
-    
+
     // MARK: - NumberModulesFactory
 
     func oneViewController() -> OneViewController {
         return OneViewController.controllerFromStoryboard(.main)
     }
-    
+
     func twoViewController() -> TwoViewController {
         return TwoViewController.controllerFromStoryboard(.main)
     }
-    
+
     func thirdViewController() -> ThirdViewController {
         return ThirdViewController.controllerFromStoryboard(.main)
     }
-    
-
 }

@@ -9,20 +9,17 @@
 import UIKit
 
 class SignUpFirstViewController: UIViewController, FlowController {
-    
-    var completionHendler: ((_ email: String) ->())?
-    
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
-    
+    var completionHendler: ((_ email: String) -> Void)?
+
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var nextButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
-    @IBAction func actionTouchInNextButton(_ sender: UIButton) {
+
+    @IBAction func actionTouchInNextButton(_: UIButton) {
         emailField.endEditing(true)
         completionHendler?(emailField.text ?? "")
     }
-
 }

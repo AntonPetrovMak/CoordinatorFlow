@@ -9,20 +9,17 @@
 import UIKit
 
 class SplashViewController: UIViewController, FlowController {
-    
-    var completionHendler: ((ApplicationCoordinatorActions) -> ())?
+    var completionHendler: ((ApplicationCoordinatorActions) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
-    @IBAction func selectStartButton(sender: UIButton) {
+
+    @IBAction func selectStartButton(sender _: UIButton) {
         completionHendler?(.numbers)
     }
-    
-    @IBAction func selectsignUpButton(sender: UIButton) {
+
+    @IBAction func selectsignUpButton(sender _: UIButton) {
         completionHendler?(.signUp)
     }
-
 }

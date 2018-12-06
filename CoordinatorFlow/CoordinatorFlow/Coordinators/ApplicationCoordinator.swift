@@ -14,21 +14,20 @@ enum ApplicationCoordinatorActions {
 }
 
 struct ApplicationCoordinator: Coordinatable {
-    
     typealias CompletionType = Void
-    var flowCompletionHandler: ((CompletionType) -> ())?
+    var flowCompletionHandler: ((CompletionType) -> Void)?
     let moduleFactory: ApplicationModulesFactory
     let presenter: UINavigationController?
-    
+
     init(_ presenter: UINavigationController, _ moduleFactory: ApplicationModulesFactory) {
         self.presenter = presenter
         self.moduleFactory = moduleFactory
     }
-    
+
     func start() {
-        self.initSplash()
+        initSplash()
     }
-    
+
     private func initSplash() {
         let splashVC = moduleFactory.splashViewController()
         splashVC.completionHendler = { action in
@@ -42,9 +41,8 @@ struct ApplicationCoordinator: Coordinatable {
         presenter?.setViewControllers([splashVC], animated: false)
         setWindowRoot(presenter!)
     }
-    
+
     private func startNumberSequence() {
-        
         var numberCoordinator = CoordinatorFactory.numberCoordinator()
         numberCoordinator.flowCompletionHandler = { _ in
             numberCoordinator.dismiss(animated: true, completion: nil)
@@ -52,13 +50,12 @@ struct ApplicationCoordinator: Coordinatable {
         numberCoordinator.start()
         present(numberCoordinator.presenter, animated: true)
     }
-    
+
     private func startSignUpSequence() {
-        
         let signUpCoordinator = CoordinatorFactory.signUpCoordinator()
         signUpCoordinator.flowCompletionHandler = { data in
             signUpCoordinator.dismiss(animated: true, completion: {
-                let alert = UIAlertController.init(title: "info", message: "Email: \(String(describing: data.email)) \nPassword: \(String(describing: data.password))", preferredStyle: .alert)
+                let alert = UIAlertController(title: "info", message: "Email: \(String(describing: data.email)) \nPassword: \(String(describing: data.password))", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true)
             })
@@ -66,6 +63,4 @@ struct ApplicationCoordinator: Coordinatable {
         signUpCoordinator.start()
         present(signUpCoordinator.presenter, animated: true)
     }
-    
-    
 }

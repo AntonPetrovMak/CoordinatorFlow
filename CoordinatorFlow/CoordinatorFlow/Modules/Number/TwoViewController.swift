@@ -9,18 +9,14 @@
 import UIKit
 
 class TwoViewController: UIViewController, FlowController {
-    
     typealias FlowControllerType = NumberActions
-    var completionHendler: ((NumberActions) -> ())?
-    
+    var completionHendler: ((NumberActions) -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
-    @IBAction func selectFinishButton(sender: UIButton) {
+
+    @IBAction func selectFinishButton(sender _: UIButton) {
         completionHendler?(.Finish)
     }
-    
-
 }

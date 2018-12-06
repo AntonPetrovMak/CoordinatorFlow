@@ -14,11 +14,10 @@ enum NumberActions {
     case Finish
 }
 
-struct NumberCoordinator : Coordinatable {
-    
+struct NumberCoordinator: Coordinatable {
     typealias CompletionType = Void
-    var flowCompletionHandler: ((CompletionType) -> ())?
-    
+    var flowCompletionHandler: ((CompletionType) -> Void)?
+
     let moduleFactory: NumberModulesFactory
     let presenter: UINavigationController?
 
@@ -28,11 +27,10 @@ struct NumberCoordinator : Coordinatable {
     }
 
     func start() {
-        self.initFirstScene()
+        initFirstScene()
     }
-    
+
     private func initFirstScene() {
-        
         let oneVC = moduleFactory.oneViewController()
         oneVC.completionHendler = { result in
             switch result {
@@ -46,7 +44,7 @@ struct NumberCoordinator : Coordinatable {
         }
         setRootModule(oneVC)
     }
-    
+
     private func openSecond() {
         let twoVC = TwoViewController.controllerFromStoryboard(.main)
         twoVC.completionHendler = { result in
@@ -59,9 +57,8 @@ struct NumberCoordinator : Coordinatable {
         }
         push(viewController: twoVC, animated: true)
     }
-    
+
     private func openThird() {
-        
         let thirdVC = ThirdViewController.controllerFromStoryboard(.main)
         thirdVC.completionHendler = { result in
             switch result {
@@ -73,5 +70,4 @@ struct NumberCoordinator : Coordinatable {
         }
         push(viewController: thirdVC, animated: true)
     }
-
 }

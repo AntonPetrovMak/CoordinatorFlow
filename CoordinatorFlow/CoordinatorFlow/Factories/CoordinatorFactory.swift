@@ -9,21 +9,19 @@
 import UIKit
 
 struct CoordinatorFactory {
-
     static func applicationCoordinator() -> ApplicationCoordinator {
         return ApplicationCoordinator(UINavigationController(), ModuleFactory())
     }
-    
+
     static func numberCoordinator() -> NumberCoordinator {
         let nc = UINavigationController()
         let numberCoordinator = NumberCoordinator(nc, ModuleFactory())
         return numberCoordinator
     }
-    
+
     static func signUpCoordinator() -> SignUpCoordinator {
         let nc = UINavigationController()
         let signUpCoordinator = SignUpCoordinator(nc, ModuleFactory())
         return signUpCoordinator
     }
-
 }
